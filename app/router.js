@@ -6,6 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('family', function () {
+    this.route('index');
+  });
+  this.route('patterns', {path: '/'});
 });
 
 export default Router;
