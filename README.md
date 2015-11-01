@@ -1,53 +1,39 @@
-# Design-patterns
+starter-kit
+===========
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Warning
+### For almost all use cases, you should use [https://ember-cli.com](ember-cli) to create your ember application. Ember starter kit is no longer recommended for new projects and you will find that you are limited in what you can do compared to ember-cli, and documentation will be misleading due to the different style of app construction in ember-cli.
 
-## Prerequisites
+A starter kit for Ember
 
-You will need the following things properly installed on your computer.
+Your Ember.js project is almost ready! Here's how to get started:
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+- Start writing your app in `js/app.js`.
 
-## Installation
+- Describe your application HTML in `index.html`.
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+- During development, you can link to `js/libs/ember-*.js` to get the
+  unminified version of Ember.js.
 
-## Running / Development
+- Add CSS to `css/style.css`.
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+- Open `index.html` in your browser.
 
-### Code Generators
+Tests
+=====
 
-Make use of the many generators for code, try `ember help generate` for more details
+This starter kit comes with an integration test sample, written for QUnit runner. 
 
-### Running Tests
+You can run the tests by opening the `index.html?test` page in your browser.
 
-* `ember test`
-* `ember test --server`
+The test is located in the `tests/tests.js` file. You can see how such an 
+integration test should be written, using QUnit assertions and ember-testing helpers.
 
-### Building
+For more information about ember-testing package see [ember-testing](http://emberjs.com/guides/testing/integration/).
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+For more information about the QUnit testing framework, see [QUnit](http://qunitjs.com/).
 
-### Deploying
+Contact
+====
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+[www.emberjs.com](http://www.emberjs.com)
