@@ -8,7 +8,7 @@ App.Router.map(function() {
 
 App.IndexRoute = Ember.Route.extend({
     model: function() {
-    return ['MobiES', 'The Conduit', 'Hyperdrag', 'Multispace', 'Tilt to preview', 'Cross-device drag and drop'];
+    return interactions;
   }
 });
 
