@@ -54,10 +54,28 @@
             {{else}}
             <img src="assets/images/download.jpg" class="img-responsive">
             {{/if}}
-            <h4 class="text-center">{{item.name}}</h4>
+            <h4 class="text-center">{{#link-to "patterns" item}}{{item.name}}{{/link-to}}</h4>
         </div>
         {{/each}}
     </div>
+  </script>
+
+    <!-- Single pattern page -->
+
+  <script type="text/x-handlebars" id="patterns">
+      <div class="row">
+          <div class="col-md-4">
+              <h3>{{model.name}}</h3>
+              {{#if model.image}}
+              <img src="assets/images/{{model.image}}" class="img-responsive">
+              {{else}}
+              <img src="assets/images/download.jpg" class="img-responsive">
+              {{/if}}
+          </div>
+          <div class="col-md-4">
+              <p>{{model.summary}}</p>
+          </div>
+      </div>
   </script>
 
 </div>
