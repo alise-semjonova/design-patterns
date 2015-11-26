@@ -7,7 +7,8 @@ var interactions = [
         id: 1,
         name: "MobiES",
         summary: "MobiES allows users to interact with data contained in a mobile device on a larger screen by detecting the proximity between the two and expanding the mobile's interface into the screen. More devices can be connected so you can share information between them.",
-        image: "Diagram_for_MobiES.png"
+        image: "Diagram_for_MobiES.png",
+        expanded_data: "Something that is displayed when is expanded."
     },
     {
         id: 2,

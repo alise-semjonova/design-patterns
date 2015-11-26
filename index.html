@@ -74,6 +74,12 @@
           </div>
           <div class="col-md-4">
               <p>{{model.summary}}</p>
+              {{#if isExpanded}}
+              <p>{{model.expanded_data}}</p>
+              <button {{action 'collapse'}}>Collapse</button>
+              {{else}}
+              <button {{action 'expand'}}>Expand</button>
+              {{/if}}
           </div>
       </div>
   </script>

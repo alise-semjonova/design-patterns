@@ -16,6 +16,16 @@ App.PatternsRoute = Ember.Route.extend({
     model: function(params) {
         console.log(interactions.filterBy(id, params.pattern_id));
         return interactions.filterBy(id, params.pattern_id);
+    },
+
+    actions: {
+        expand: function() {
+          this.controller.set('isExpanded', true);
+        },
+
+        collapse: function() {
+          this.controller.set('isExpanded', false);
+        }
     }
 });
 
