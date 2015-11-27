@@ -28,6 +28,7 @@ var interactions = [
         id: 4,
         name: "Cross-Device Drag-and-Drop",
         summary: "Allows user to drag objects between devices by a continuous dragging operation, dropping it at the destination device",
+        image: "exploding_kitten.png"
     }
 
 ];
