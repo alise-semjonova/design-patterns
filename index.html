@@ -65,20 +65,24 @@
   <script type="text/x-handlebars" id="patterns">
       <div class="row">
           <div class="col-md-4">
-              <h3>{{model.name}}</h3>
+              <br>
               {{#if model.image}}
               <img src="assets/images/{{model.image}}" class="img-responsive">
               {{else}}
               <img src="assets/images/download.jpg" class="img-responsive">
               {{/if}}
           </div>
-          <div class="col-md-4">
+          <div class="col-md-8">
+              <h3>{{model.name}}</h3>
               <p>{{model.summary}}</p>
               {{#if isExpanded}}
+              <h4>More information</h4>
               <p>{{model.expanded_data}}</p>
+              <h4>Reference</h4>
+              <p>{{model.reference}}</p>
               <button {{action 'collapse'}}>Collapse</button>
               {{else}}
-              <button {{action 'expand'}}>Expand</button>
+              <button {{action 'expand'}}>More info</button>
               {{/if}}
           </div>
       </div>
