@@ -22,7 +22,7 @@
             {{#link-to "index" class="navbar-brand"}}Home{{/link-to}}
         </div>
             <ul class="nav navbar-nav">
-                <li>{{#link-to "patterns"}}Patterns{{/link-to}}</li>
+                <li>{{#link-to "index"}}Patterns{{/link-to}}</li>
             </ul>
 
         <form class="navbar-form navbar-right" role="search">
@@ -50,9 +50,13 @@
         {{#each model as |item|}}
         <div class="col-md-4">
             {{#if item.image}}
+            {{#link-to "patterns" item}}
             <img src="assets/images/{{item.image}}" class="img-responsive">
+            {{/link-to}}
             {{else}}
+            {{#link-to "patterns" item}}
             <img src="assets/images/download.jpg" class="img-responsive">
+            {{/link-to}}
             {{/if}}
             <h4 class="text-center">{{#link-to "patterns" item}}{{item.name}}{{/link-to}}</h4>
         </div>
