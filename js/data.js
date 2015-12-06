@@ -2,6 +2,24 @@
  * Created by Maciej_Szlosarczyk on 03/11/2015.
  */
 
+GroupModel = DS.Model.extend({
+    name: DS.attr('string')
+});
+
+
+InteractionModel = DS.Model.extend({
+    name: DS.attr('string'),
+    summary: DS.attr('string'),
+    expanded_data: DS.attr('string'),
+    reference: DS.attr('string'),
+    media: DS.hasMany('media', {async: true})
+});
+
+MediaModel = DS.Model.extend({
+    interaction: DS.belongsTo('interaction', {async: true}),
+    url: DS.attr('string')
+});
+
 var interactions = [
     {
         id: 1,

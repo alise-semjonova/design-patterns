@@ -23,6 +23,7 @@
         </div>
             <ul class="nav navbar-nav">
                 <li>{{#link-to "index"}}Patterns{{/link-to}}</li>
+                <li>{{#link-to "new-interaction"}}Add an interaction{{/link-to}}</li>
             </ul>
 
         <form class="navbar-form navbar-right" role="search">
@@ -50,23 +51,23 @@
         {{#each model as |item|}}
         <div class="col-md-4">
             {{#if item.image}}
-            {{#link-to "patterns" item}}
+            {{#link-to "interaction" item}}
             <img src="assets/images/{{item.image}}" class="img-responsive">
             {{/link-to}}
             {{else}}
-            {{#link-to "patterns" item}}
+            {{#link-to "interaction" item}}
             <img src="assets/images/download.jpg" class="img-responsive">
             {{/link-to}}
             {{/if}}
-            <h4 class="text-center">{{#link-to "patterns" item}}{{item.name}}{{/link-to}}</h4>
+            <h4 class="text-center">{{#link-to "interaction" item}}{{item.name}}{{/link-to}}</h4>
         </div>
         {{/each}}
     </div>
   </script>
 
-    <!-- Single pattern page -->
+    <!-- Single interaction page -->
 
-  <script type="text/x-handlebars" id="patterns">
+  <script type="text/x-handlebars" id="interaction">
       <div class="row">
           <div class="col-md-4">
               <br>
@@ -88,15 +89,69 @@
               {{else}}
               <button {{action 'expand'}}>More info</button>
               {{/if}}
+              <br>
+              <p>{{#link-to "interaction.edit" model}}Edit this interaction{{/link-to}}</p>
+              <button {{action 'delete'}}>Delete</button>
           </div>
       </div>
   </script>
+
+
+    <script type="text/x-handlebars" id="interaction.edit">
+        <div class="row">
+            <div class="col-md-4">
+                <br>
+                {{#if model.image}}
+                <img src="assets/images/{{model.image}}" class="img-responsive">
+                {{else}}
+                <img src="assets/images/download.jpg" class="img-responsive">
+                {{/if}}
+            </div>
+            <div class="col-md-8">
+                <h3>{{input value=name placeholder=model.name}}</h3>
+                <p>{{input value=summary placeholder=model.summary}}</p>
+                <p>{{input value=expanded_data placeholder=model.expanded_data}}</p>
+                <h4>Reference</h4>
+                <p>{{input value=reference placeholder=model.reference}}</p>
+            </div>
+        </div>
+    </script>
+
+
+    <script type="text/x-handlebars" id="new-interaction">
+        <div class="row">
+            <div class="col-md-8">
+                <form {{action 'save' on='submit'}}>
+                <div class="form-group">
+                <label for="name">Name</label>
+                {{input id='name' value=name placeholder="Name"}}
+                <label for="summary">Summary</label>
+                {{textarea id='summary' value=summary placeholder="Summary"}}
+                <label for="expanded_data">More information</label>
+                {{textarea id='expanded_data' value=expanded_data placeholder="More information"}}
+                <label for="reference">Reference</label>
+                {{textarea value=reference placeholder="Academic reference"}}
+                <button type="submit">Submit</button>
+                </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h3>Enter a media file</h3>
+            </div>
+        </div>
+    </script>
 
 </div>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/ember-template-compiler-2.0.1.js"></script>
   <script src="js/libs/ember-2.0.1.debug.js"></script>
+  <!-- Ember data and firebase -->
+<script src="js/libs/ember-data.js"></script>
+<script src="js/libs/firebase.js"></script>
+<script src="js/libs/emberfire.min.js"></script>
+
+  <!-- actual app -->
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 
